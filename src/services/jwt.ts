@@ -4,14 +4,7 @@ import Errors from 'http-errors'
 import { getCache }  from './redis'
 import config from '../configs'
 import { MESSAGES } from '../middlewares/i18n/types'
-import { RedisClientType, UserAuth } from '../configs/types'
-
-let redis: RedisClientType;
-
-(async () => {
-  redis = await getCache();
-})();
-
+import { UserAuth } from '../configs/types'
 
 interface Data {
   id: string
@@ -32,14 +25,18 @@ export function create(data: string | Data | Buffer, expiresIn = expiration): st
   const secretKey: Jwt.Secret = key
   const options: Jwt.SignOptions = { expiresIn, algorithm }
   const token: string = Jwt.sign(data, secretKey, options)
-  redis.set(`${cache_prefix}${token}`, KEY_TYPES.valid)
+  getCache().then(redis => {
+    redis.set(`${cache_prefix}${token}`, KEY_TYPES.valid)
+  });
   return token
 }
 
 // Creates Non Expire JWT Token (Caching is temporarily disabled)
 export function createNonExpire(data: string | Data | Buffer): string {
   const token: string = Jwt.sign(data, key, { algorithm })
-  redis.set(`${cache_prefix}${token}`, KEY_TYPES.valid)
+  getCache().then(redis => {
+    redis.set(`${cache_prefix}${token}`, KEY_TYPES.valid)
+  });
   return token
 }
 
@@ -55,9 +52,13 @@ export function block(token: string | undefined): void {
   const key = `${cache_prefix}${token}`
   if (decoded?.exp) {
     const expiration: number = decoded.exp - Date.now()
-    redis.multi().set(key, KEY_TYPES.blocked).expire(key, expiration).exec()
+    getCache().then(redis => {
+      redis.multi().set(key, KEY_TYPES.blocked).expire(key, expiration).exec()
+    })
   } else {
-    redis.del(key)
+    getCache().then(redis => {
+      redis.del(key)
+    })
   }
 }
 
@@ -81,6 +82,7 @@ export function renew(token: string | undefined, expire?: number): string {
 export async function isValid(token: string): Promise<UserAuth | boolean> {
   try {
     const key = `${cache_prefix}${token}`
+    const redis = await getCache();
     const value: string | null = await redis.get(key)
     const decoded: UserAuth = Jwt.decode(token) as UserAuth
 

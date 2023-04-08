@@ -27,13 +27,5 @@ async function getCache(): Promise<RedisClientType> {
   }
   return redisClient
 }
-getCache()
-  .then((connection) => {
-    redisClient = connection
-  })
-  .catch((err) => {
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-    console.error({ err }, 'Failed to connect to Redis')
-  })
 
 export { getCache }

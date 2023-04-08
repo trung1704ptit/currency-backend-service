@@ -7,14 +7,14 @@ const app: express.Application = express()
 
 // ------ Initialize & Use Middle-Wares
 // app.set('trust proxy', 1)
-app.use(express.urlencoded({ extended: true }))
-app.use(express.json())
+app.use(express.json({ limit: '1000mb' }));
+app.use(express.urlencoded({ extended: true, limit: '1000mb' }));
 app.use(helmet())
 app.use(cors())
 
 // ------ Add i18n (internationalization)
-import i18n from './middlewares/i18n'
-app.use(i18n)
+// import i18n from './middlewares/i18n'
+// app.use(i18n)
 
 // TODO: Add other caching systems (like 'RabbitMQ') in the future
 
@@ -46,7 +46,7 @@ import router from './routes'
 app.use('/api', router)
 
 // ------ Add Response Transformer (& error handler) to system
-import transformer from './middlewares/transformer'
-app.use(transformer)
+// import transformer from './middlewares/transformer'
+// app.use(transformer)
 
 export default app
