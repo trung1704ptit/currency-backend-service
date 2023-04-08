@@ -1,39 +1,39 @@
-// -------------------------------------- Initialize redis + config --------------------------------------
-// import { promisify } from 'util'
-import { RedisClientOptions, createClient }  from 'redis'
+import { RedisClientOptions, createClient } from 'redis'
 import config from '../configs'
+import { RedisClientType } from '../configs/types'
 
 const { REDIS_HOST, REDIS_PORT, REDIS_PASSWORD } = config.env
-const url = `redis://${ REDIS_PASSWORD ? `:${REDIS_PASSWORD}@` : '' }${REDIS_HOST}:${REDIS_PORT}`
+const url = `redis://${
+  REDIS_PASSWORD ? `:${REDIS_PASSWORD}@` : ''
+}${REDIS_HOST}:${REDIS_PORT}`
 const options: RedisClientOptions = { url }
-if(REDIS_PASSWORD) options.password = REDIS_PASSWORD
-const client = createClient(options)
 
-// const getAsync = promisify(client.get).bind(client)
+let redisClient: RedisClientType
+let isReady: boolean
 
-client.on('error', (err: any) => { console.log(`>>>> Redis Error: ${err}`) })
-console.log(`<<<< Connected to Redis >>>>`)
+async function getCache(): Promise<RedisClientType> {
+  if (!isReady) {
+    redisClient = createClient({
+      ...options
+    })
+    redisClient.on('error', (err) => console.error(`Redis Error: ${err}`))
+    redisClient.on('connect', () => console.log('Redis connected'))
+    redisClient.on('reconnecting', () => console.log('Redis reconnecting'))
+    redisClient.on('ready', () => {
+      isReady = true
+      console.log('Redis ready!')
+    })
+    await redisClient.connect()
+  }
+  return redisClient
+}
+getCache()
+  .then((connection) => {
+    redisClient = connection
+  })
+  .catch((err) => {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+    console.error({ err }, 'Failed to connect to Redis')
+  })
 
-// -------------------------------------- Redis Functions --------------------------------------
-// function set(key: string, value: any): Promise<boolean> {
-//   return Promise.resolve( client.set(key, JSON.stringify(value)) )
-// }
-
-// async function get(keyPattern: string): Promise<any> {
-//   try {
-//     const result = await getAsync(keyPattern)
-//     console.log('>>>>>>>> getAsync result: ', result)
-//     if(!result) return false
-//     return JSON.parse(result)
-//   }
-//   catch (err) {
-//     console.log('Redis Error - Fetch Data: ', err)
-//     throw err
-//   }
-// }
-
-// const exportResult = { set, get }
-
-// export default exportResult
-
-export default client
+export { getCache }

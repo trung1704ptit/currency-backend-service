@@ -1,10 +1,17 @@
 import Jwt    from 'jsonwebtoken'
 import Errors from 'http-errors'
 
-import redis  from './redis'
+import { getCache }  from './redis'
 import config from '../configs'
 import { MESSAGES } from '../middlewares/i18n/types'
-import { UserAuth } from '../configs/types'
+import { RedisClientType, UserAuth } from '../configs/types'
+
+let redis: RedisClientType;
+
+(async () => {
+  redis = await getCache();
+})();
+
 
 interface Data {
   id: string

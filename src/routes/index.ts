@@ -9,7 +9,11 @@ const router: Router = Router()
 
 // Sample APIs
 import sampleRouter from './sample'
+import currencyRouter from './currency'
+
 router.use('/v1/samples', sampleRouter)
+router.use('/v1/currency', currencyRouter)
+
 
 // API Documentation Swagger
 import swaggerUi  from 'swagger-ui-express'

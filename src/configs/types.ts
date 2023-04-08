@@ -1,4 +1,7 @@
 import { Algorithm } from 'jsonwebtoken'
+import { createClient } from 'redis'
+
+export type RedisClientType = ReturnType<typeof createClient>
 
 export interface JwtModel {
   readonly key             : string
@@ -70,3 +73,22 @@ export interface ConfigModel {
   readonly regex     : RegexType
   readonly maxPageSizeLimit : number
 }
+
+export enum Estatus {
+  default = '',
+  negative = '-',
+  positive = '+'
+}
+
+export interface ICurrency {
+  pairName: string
+  price: number
+  dayChanged: number
+  dayChangedByPercent: number
+  from: string
+  to: string
+  dayChangedStatus: Estatus
+  lastUpdated: Date
+}
+
+export type roundToNumber = (num: number, decimals: number) => number
