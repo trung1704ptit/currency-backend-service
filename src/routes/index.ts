@@ -8,10 +8,10 @@ const router: Router = Router()
 // router.use('/v1/samples', JwtCheck, sampleRouter)
 
 // Sample APIs
-import sampleRouter from './sample'
+// import sampleRouter from './sample'
 import currencyRouter from './currency'
 
-router.use('/v1/samples', sampleRouter)
+// router.use('/v1/samples', sampleRouter)
 router.use('/v1/currency', currencyRouter)
 
 

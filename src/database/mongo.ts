@@ -3,7 +3,9 @@ import config   from '../configs'
 
 // Database URL
 const { DB_HOST, DB_PORT, DB_NAME, DB_USER, DB_PASS, NODE_ENV } = config.env
-const dbURL = `mongodb://${DB_HOST}:${DB_PORT}/${DB_NAME}`
+const dbURL = `mongodb://${DB_USER}:${DB_PASS}@${DB_HOST}:${DB_PORT}/${DB_NAME}`
+
+console.log("dbURL:", dbURL)
 
 // Import the mongoose module
 const options: mongoose.ConnectOptions = {
@@ -11,10 +13,10 @@ const options: mongoose.ConnectOptions = {
 }
 
 // Secure MongoDB with username and password
-if(DB_USER && DB_PASS) {
-  options.user = DB_USER
-  options.pass = DB_PASS
-}
+// if(DB_USER && DB_PASS) {
+//   options.user = DB_USER
+//   options.pass = DB_PASS
+// }
 
 async function connectDB(): Promise<mongoose.Connection> {
   try {

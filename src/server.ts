@@ -10,7 +10,7 @@ import config from './configs'
 const { NODE_ENV, SERVER_PROTOCOL, SERVER_HOST, SERVER_PORT } = config.env
 
 // ------ Require Database
-import dbConnect from './database'
+// import dbConnect from './database'
 
 // TODO: Avoids DEPTH_ZERO_SELF_SIGNED_CERT error for self-signed certs
 // process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0'
@@ -47,7 +47,7 @@ async function startServer(server: http.Server | https.Server): Promise<void> {
 
 (async () => {
   try {
-    await dbConnect()
+    // await dbConnect()
     await startServer(server)
   } catch (error) {
     throw Error(`>>>>> Server Connection Error: ${error}`)

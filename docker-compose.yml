@@ -1,0 +1,69 @@
+version: "3.9"
+
+services:
+  # --------> MY-APP-Server <--------
+  backend:
+    build:
+      context: ./
+      dockerfile: ./app.dockerfile
+    image: backend
+    container_name: backend
+    restart: always
+    working_dir: /usr/src
+    env_file: ./.env
+    ports:
+      - 5000:5000
+    volumes:
+      - backend-volume:/usr
+    stdin_open: true
+    tty: true
+    networks:
+      - backend-network
+
+
+  # --------> MY-APP-MONGODB <--------
+  mongodb:
+    image: bitnami/mongodb:5.0
+    container_name: mongodb
+    env_file:
+      - ./.env
+    environment:
+      MONGODB_ROOT_PASSWORD: password
+      MONGODB_PASSWORD: password
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb-volume:/data/db
+    networks:
+      - backend-network
+
+  # --------> MY-APP-REDIS <--------
+  redis:
+    container_name: redis
+    image: "bitnami/redis:latest"
+    user: "root"
+    env_file:
+      - ./.env
+    environment:
+      REDIS_HOST: localhost
+      REDIS_PORT: 6379
+      REDIS_PASSWORD: redis
+    ports:
+      - 6379:6379
+    restart: always
+    volumes:
+      - cache:/data
+    networks:
+      - backend-network
+
+networks:
+  backend-network:
+    name: backend-network
+
+volumes:
+  backend-volume:
+  mongodb-volume:
+  # my-mysql-volume:
+  cache:
+    driver: local
