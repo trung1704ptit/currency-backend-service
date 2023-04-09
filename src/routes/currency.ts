@@ -46,7 +46,7 @@ import Controller from '../controllers/currency'
  *         "400":
  *           $ref: '#/components/responses/BadRequest'
  */
-router.route('/rates').get( Controller.getCurrencyRates)
-router.route('/converts').get( Controller.convertCurrency)
+router.route('/rates').get(Controller.getCurrencyRates)
+router.route('/converts').get(Controller.convertCurrency)
 router.route('').post(Controller.updateCurrency)
 export default router

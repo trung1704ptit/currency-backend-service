@@ -92,3 +92,9 @@ export interface ICurrency {
 }
 
 export type roundToNumber = (num: number, decimals: number) => number
+
+export interface IQuery {
+  from: string
+  to: string
+  amount: number
+}

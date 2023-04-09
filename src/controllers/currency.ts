@@ -1,8 +1,9 @@
 import { Request, Response } from 'express'
 import { ICurrency } from '../configs/types'
-
+import validators from '../validators/currency';
 const catchAsync = require('../utils/catchAsync')
-const currencyService = require('../services/currency')
+const currencyService = require('../services/currency');
+
 
 const updateCurrency = catchAsync(async (req: Request, res: Response) => {
   const { currencies } = req.body
@@ -32,14 +33,24 @@ const handleSocketConnect = catchAsync(async (socket: any) => {
 const getCurrencyRates = catchAsync(async (req: Request, res: Response) => {
   const { query } = req
   const { from, to } = query
+  const validatedResult = validators.getRates.validate(query);
+  if (validatedResult.error) {
+    res.status(400).send('Invalid query');
+    return;
+  }
   const currencyData = await currencyService.getCurrencyRatesByFrom(from, to)
   res.send(currencyData)
 })
 
 const convertCurrency = catchAsync(async (req: Request, res: Response) => {
   const { query } = req
-  const { from, to, amount } = query
-  const currencyData = await currencyService.convertCurrency(from, to, amount)
+  const parsedQuery = {...query, amount: Number(query.amount)}
+  const validatedResult = validators.convert.validate(parsedQuery);
+  if (validatedResult.error) {
+    res.status(400).send('Invalid query');
+    return;
+  }
+  const currencyData = await currencyService.convertCurrency(parsedQuery)
   res.send(currencyData)
 })
 

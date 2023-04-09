@@ -1,4 +1,4 @@
-import { ICurrency, roundToNumber } from "../configs/types"
+import { ICurrency, IQuery, roundToNumber } from "../configs/types"
 const { getCache } = require('./redis')
 
 const round: roundToNumber = (num: number, decimals: number) => {
@@ -87,8 +87,9 @@ const getCurrencyRatesByFrom = async (from: string, to: string) => {
   }
 }
 
-const convertCurrency = async (from: string, to: string, amount: number) => {
+const convertCurrency = async (query: IQuery) => {
   try {
+    const { from, to, amount } = query;
     if (from && to && amount) {
       let data
       const redisClient = await getCache();
