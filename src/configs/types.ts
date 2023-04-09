@@ -99,9 +99,16 @@ export interface IQuery {
   amount: number
 }
 
-export interface ISymbol {
-  country: string,
-  iso: string,
-  name: string,
-  symbol: string
+export interface ISymbols {
+  symbols: {
+    country: string,
+    iso: string,
+    name: string,
+    symbol: string
+  }[]
+}
+
+export interface ISymbolsResponse {
+  success: boolean
+  symbols: ISymbols[]
 }

@@ -1,4 +1,9 @@
-import { ICurrency, IQuery, ISymbol, roundToNumber } from "../configs/types"
+import {
+  ICurrency,
+  IQuery,
+  ISymbolsResponse,
+  roundToNumber
+} from '../configs/types'
 const { getCache } = require('./redis')
 
 const round: roundToNumber = (num: number, decimals: number) => {
@@ -36,7 +41,7 @@ const getCurrencyByPairName = async (pairName: string) => {
     if (!pairName) return data
 
     const spliter = pairName.split('/')
-    const redisClient = await getCache();
+    const redisClient = await getCache()
     const dataCached = await redisClient.get(spliter[0])
     if (dataCached) {
       data = JSON.parse(dataCached)
@@ -56,7 +61,7 @@ const getCurrencyRatesByFrom = async (from: string, to: string) => {
       return null
     }
     let data
-    const redisClient = await getCache();
+    const redisClient = await getCache()
     const dataCached = await redisClient.get(from)
     if (dataCached) {
       data = JSON.parse(dataCached)
@@ -87,23 +92,29 @@ const getCurrencyRatesByFrom = async (from: string, to: string) => {
   }
 }
 
-const getSymbols = async (): Promise<ISymbol[]> => {
+const getSymbols = async (): Promise<ISymbolsResponse> => {
   try {
-    const redisClient = await getCache();
-    const currencyList = redisClient.get('currencyList') || [];
-    return currencyList;
+    const redisClient = await getCache()
+    const symbols = await redisClient.get('currencyList')
+    if (symbols) {
+      return {
+        success: true,
+        symbols: JSON.parse(symbols)
+      }
+    }
+    return { success: true, symbols: [] }
   } catch (error) {
-    console.log('Error in getSymbols:', error);
-    return [];
+    console.log('Error in getSymbols:', error)
+    return { success: false, symbols: [] }
   }
 }
 
 const convertCurrency = async (query: IQuery) => {
   try {
-    const { from, to, amount } = query;
+    const { from, to, amount } = query
     if (from && to && amount) {
       let data
-      const redisClient = await getCache();
+      const redisClient = await getCache()
       const dataCached = await redisClient.get(from)
       if (dataCached) {
         data = JSON.parse(dataCached)
@@ -147,8 +158,8 @@ const updateCurrencyByBatch = async (currencies: ICurrency[]) => {
   try {
     const currenciesGroup: any = groupByCategory(currencies)
     Object.keys(currenciesGroup).forEach(async (key) => {
-      let rates = currenciesGroup[key];
-      const redisClient = await getCache();
+      let rates = currenciesGroup[key]
+      const redisClient = await getCache()
       let prevRates = await redisClient.get(key)
 
       if (prevRates && rates) {

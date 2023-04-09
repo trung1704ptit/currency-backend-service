@@ -25,7 +25,7 @@ async function getCache(): Promise<RedisClientType> {
       console.log('Redis ready!')
     })
     await redisClient.connect()
-    await redisClient.set('currencyList', JSON.stringify(currencyList))
+    await redisClient.set('currencyList', JSON.stringify( currencyList ))
   }
   return redisClient
 }

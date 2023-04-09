@@ -1,1183 +1,1183 @@
 const currencyList = [
   {
     country: 'United States',
-    iso: 'USD',
+    isoCode: 'USD',
     name: 'United States Dollar',
     symbol: '$'
   },
   {
     country: 'Euro Member Countries',
-    iso: 'EUR',
+    isoCode: 'EUR',
     name: 'Euro',
     symbol: '€'
   },
   {
     country: 'United Kingdom',
-    iso: 'GBP',
+    isoCode: 'GBP',
     name: 'British Pound',
     symbol: '£'
   },
   {
     country: 'Canada',
-    iso: 'CAD',
+    isoCode: 'CAD',
     name: 'Canadian Dollar',
     symbol: '$'
   },
   {
     country: 'Australia',
-    iso: 'AUD',
+    isoCode: 'AUD',
     name: 'Australian Dollar',
     symbol: '$'
   },
   {
     country: 'Japan',
-    iso: 'JPY',
+    isoCode: 'JPY',
     name: 'Japanese Yen',
     symbol: '¥'
   },
   {
     country: 'India',
-    iso: 'INR',
+    isoCode: 'INR',
     name: 'Indian Rupee',
     symbol: '₹'
   },
   {
     country: 'China',
-    iso: 'CNY',
+    isoCode: 'CNY',
     name: 'Chinese Yuan',
     symbol: '¥'
   },
   {
     country: 'Brazil',
-    iso: 'BRL',
+    isoCode: 'BRL',
     name: 'Brazilian Real',
     symbol: 'R$'
   },
   {
     country: 'Singapore',
-    iso: 'SGD',
+    isoCode: 'SGD',
     name: 'Singapore Dollar',
     symbol: '$'
   },
   {
     country: 'Russia',
-    iso: 'RUB',
+    isoCode: 'RUB',
     name: 'Russian Ruble',
     symbol: '₽'
   },
   {
     country: 'Vietnam',
-    iso: 'VND',
+    isoCode: 'VND',
     name: 'Vietnamese Dong',
     symbol: '₫'
   },
   {
     country: 'Korea, South',
-    iso: 'KRW',
+    isoCode: 'KRW',
     name: 'South Korean Won',
     symbol: '₩'
   },
   {
     country: 'Hong Kong',
-    iso: 'HKD',
+    isoCode: 'HKD',
     name: 'Hong Kong Dollar',
     symbol: '$'
   },
   {
     country: 'Sweden',
-    iso: 'SEK',
+    isoCode: 'SEK',
     name: 'Swedish Krona',
     symbol: 'kr'
   },
   {
     country: 'Switzerland',
-    iso: 'CHF',
+    isoCode: 'CHF',
     name: 'Swiss Franc',
     symbol: 'CHF'
   },
   {
     country: 'Central African CFA Franc BEAC',
-    iso: 'XAF',
+    isoCode: 'XAF',
     name: 'Central African Cfa Franc BEAC',
     symbol: 'FCFA'
   },
   {
     country: 'Afghanistan',
-    iso: 'AFN',
+    isoCode: 'AFN',
     name: 'Afghan Afghani',
     symbol: '؋'
   },
   {
     country: 'Albania',
-    iso: 'ALL',
+    isoCode: 'ALL',
     name: 'Albanian Lek',
     symbol: 'Lek'
   },
   {
     country: 'Algeria',
-    iso: 'DZD',
+    isoCode: 'DZD',
     name: 'Algerian Dinar',
     symbol: 'دج'
   },
   {
     country: 'Andorra',
-    iso: 'EUR',
+    isoCode: 'EUR',
     name: 'Euro',
     symbol: '€'
   },
   {
     country: 'Angola',
-    iso: 'AOA',
+    isoCode: 'AOA',
     name: 'Angolan Kwanza',
     symbol: 'Kz'
   },
   {
     country: 'Antigua and Barbuda',
-    iso: 'XCD',
+    isoCode: 'XCD',
     name: 'East Caribbean Dollar',
     symbol: '$'
   },
   {
     country: 'Argentina',
-    iso: 'ARS',
+    isoCode: 'ARS',
     name: 'Argentine Peso',
     symbol: '$'
   },
   {
     country: 'Armenia',
-    iso: 'AMD',
+    isoCode: 'AMD',
     name: 'Armenian Dram',
     symbol: '֏'
   },
   {
     country: 'Austria',
-    iso: 'EUR',
+    isoCode: 'EUR',
     name: 'Euro',
     symbol: '€'
   },
   {
     country: 'Azerbaijan',
-    iso: 'AZN',
+    isoCode: 'AZN',
     name: 'Azerbaijani Manat',
     symbol: '₼'
   },
   {
     country: 'Bahamas',
-    iso: 'BSD',
+    isoCode: 'BSD',
     name: 'Bahamian Dollar',
     symbol: '$'
   },
   {
     country: 'Bahrain',
-    iso: 'BHD',
+    isoCode: 'BHD',
     name: 'Bahraini Dinar',
     symbol: '.د.ب'
   },
   {
     country: 'Bangladesh',
-    iso: 'BDT',
+    isoCode: 'BDT',
     name: 'Bangladeshi Taka',
     symbol: '৳'
   },
   {
     country: 'Barbados',
-    iso: 'BBD',
+    isoCode: 'BBD',
     name: 'Barbadian Dollar',
     symbol: '$'
   },
   {
     country: 'Belarus',
-    iso: 'BYN',
+    isoCode: 'BYN',
     name: ' Belarusian Ruble',
     symbol: 'Br'
   },
   {
     country: 'Belgium',
-    iso: 'EUR',
+    isoCode: 'EUR',
     name: 'Euro',
     symbol: '€'
   },
   {
     country: 'Belize',
-    iso: 'BZD',
+    isoCode: 'BZD',
     name: 'Belize Dollar',
     symbol: 'BZ$'
   },
   {
     country: 'Benin',
-    iso: 'XOF',
+    isoCode: 'XOF',
     name: 'West African Cfa Franc',
     symbol: 'CFA'
   },
   {
     country: 'Bhutan',
-    iso: 'BTN',
+    isoCode: 'BTN',
     name: 'Bhutanese Ngultrum',
     symbol: 'Nu.'
   },
   {
     country: 'Bolivia',
-    iso: 'BOB',
+    isoCode: 'BOB',
     name: 'Bolivian Boliviano',
     symbol: '$b'
   },
   {
     country: 'Bosnia and Herzegovina',
-    iso: 'BAM',
+    isoCode: 'BAM',
     name: 'Bosnia And Herzegovina Convertible Mark',
     symbol: 'KM'
   },
   {
     country: 'Botswana',
-    iso: 'BWP',
+    isoCode: 'BWP',
     name: 'Botswana Pula',
     symbol: 'P'
   },
   {
     country: 'Brunei',
-    iso: 'BND',
+    isoCode: 'BND',
     name: 'Brunei Dollar',
     symbol: '$'
   },
   {
     country: 'Bulgaria',
-    iso: 'BGN',
+    isoCode: 'BGN',
     name: 'Bulgarian Lev',
     symbol: 'лв'
   },
   {
     country: 'Burkina Faso',
-    iso: 'XOF',
+    isoCode: 'XOF',
     name: 'West African Cfa Franc',
     symbol: 'CFA'
   },
   {
     country: 'Burundi',
-    iso: 'BIF',
+    isoCode: 'BIF',
     name: 'Burundian Franc',
     symbol: 'FBu'
   },
   {
     country: 'Cambodia',
-    iso: 'KHR',
+    isoCode: 'KHR',
     name: 'Cambodian Riel',
     symbol: '៛'
   },
   {
     country: 'Cameroon',
-    iso: 'XAF',
+    isoCode: 'XAF',
     name: 'Central African Cfa Franc',
     symbol: 'FCFA'
   },
   {
     country: 'Cape Verde',
-    iso: 'CVE',
+    isoCode: 'CVE',
     name: 'Cape Verdean Escudo',
     symbol: '$'
   },
   {
     country: 'Central African Republic',
-    iso: 'XAF',
+    isoCode: 'XAF',
     name: 'Central African Cfa Franc',
     symbol: 'FCFA'
   },
   {
     country: 'Chad',
-    iso: 'XAF',
+    isoCode: 'XAF',
     name: 'Central African Cfa Franc',
     symbol: 'FCFA'
   },
   {
     country: 'Chile',
-    iso: 'CLP',
+    isoCode: 'CLP',
     name: 'Chilean Peso',
     symbol: '$'
   },
   {
     country: 'Colombia',
-    iso: 'COP',
+    isoCode: 'COP',
     name: 'Colombian Peso',
     symbol: '$'
   },
   {
     country: 'Comoros',
-    iso: 'KMF',
+    isoCode: 'KMF',
     name: 'Comorian Franc',
     symbol: 'CF'
   },
   {
     country: 'Costa Rica',
-    iso: 'CRC',
+    isoCode: 'CRC',
     name: 'Costa Rican Colón',
     symbol: '₡'
   },
   {
     country: 'Croatia',
-    iso: 'EUR',
+    isoCode: 'EUR',
     name: 'Euro',
     symbol: '€'
   },
   {
     country: 'Cuba',
-    iso: 'CUP',
+    isoCode: 'CUP',
     name: 'Cuban Peso',
     symbol: '₱'
   },
   {
     country: 'Cyprus',
-    iso: 'EUR',
+    isoCode: 'EUR',
     name: 'Euro',
     symbol: '€'
   },
   {
     country: 'Czech Republic',
-    iso: 'CZK',
+    isoCode: 'CZK',
     name: 'Czech Koruna',
     symbol: 'Kč'
   },
   {
     country: 'Democratic Republic of Congo',
-    iso: 'CDF',
+    isoCode: 'CDF',
     name: 'Congolese Franc',
     symbol: 'FC'
   },
   {
     country: 'Denmark',
-    iso: 'DKK',
+    isoCode: 'DKK',
     name: 'Danish Krone',
     symbol: 'kr'
   },
   {
     country: 'Djibouti',
-    iso: 'DJF',
+    isoCode: 'DJF',
     name: 'Djiboutian Franc',
     symbol: 'Fdj'
   },
   {
     country: 'Dominica',
-    iso: 'XCD',
+    isoCode: 'XCD',
     name: 'East Caribbean Dollar',
     symbol: '$'
   },
   {
     country: 'Dominican Republic',
-    iso: 'DOP',
+    isoCode: 'DOP',
     name: 'Dominican Peso',
     symbol: 'RD$'
   },
   {
     country: 'East Timor',
-    iso: 'USD',
+    isoCode: 'USD',
     name: 'United States Dollar',
     symbol: '$'
   },
   {
     country: 'Ecuador',
-    iso: 'USD',
+    isoCode: 'USD',
     name: 'United States Dollar',
     symbol: '$'
   },
   {
     country: 'Egypt',
-    iso: 'EGP',
+    isoCode: 'EGP',
     name: 'Egyptian Pound',
     symbol: '£'
   },
   {
     country: 'El Salvador',
-    iso: 'USD',
+    isoCode: 'USD',
     name: 'United States Dollar',
     symbol: '$'
   },
   {
     country: 'Equatorial Guinea',
-    iso: 'XAF',
+    isoCode: 'XAF',
     name: 'Central African Cfa Franc',
     symbol: 'FCFA'
   },
   {
     country: 'Eritrea',
-    iso: 'ERN',
+    isoCode: 'ERN',
     name: 'Eritrean Nakfa',
     symbol: 'Nfk'
   },
   {
     country: 'Estonia',
-    iso: 'EUR',
+    isoCode: 'EUR',
     name: 'Euro',
     symbol: '€'
   },
   {
     country: 'Eswatini',
-    iso: 'SZL',
+    isoCode: 'SZL',
     name: 'Swazi Lilangeni',
     symbol: 'E'
   },
   {
     country: 'Ethiopia',
-    iso: 'ETB',
+    isoCode: 'ETB',
     name: 'Ethiopian Birr',
     symbol: 'Br'
   },
   {
     country: 'Fiji',
-    iso: 'FJD',
+    isoCode: 'FJD',
     name: 'Fijian Dollar',
     symbol: '$'
   },
   {
     country: 'Finland',
-    iso: 'EUR',
+    isoCode: 'EUR',
     name: 'Euro',
     symbol: '€'
   },
   {
     country: 'France',
-    iso: 'EUR',
+    isoCode: 'EUR',
     name: 'Euro',
     symbol: '€'
   },
   {
     country: 'Gabon',
-    iso: 'XAF',
+    isoCode: 'XAF',
     name: 'Central African Cfa Franc',
     symbol: 'FCFA'
   },
   {
     country: 'Gambia',
-    iso: 'GMD',
+    isoCode: 'GMD',
     name: 'Gambian Dalasi',
     symbol: 'D'
   },
   {
     country: 'Georgia',
-    iso: 'GEL',
+    isoCode: 'GEL',
     name: 'Georgian Lari',
     symbol: '₾'
   },
   {
     country: 'Germany',
-    iso: 'EUR',
+    isoCode: 'EUR',
     name: 'Euro',
     symbol: '€'
   },
   {
     country: 'Ghana',
-    iso: 'GHS',
+    isoCode: 'GHS',
     name: 'Ghanaian Cedi',
     symbol: 'GH₵'
   },
   {
     country: 'Greece',
-    iso: 'EUR',
+    isoCode: 'EUR',
     name: 'Euro',
     symbol: '€'
   },
   {
     country: 'Grenada',
-    iso: 'XCD',
+    isoCode: 'XCD',
     name: 'East Caribbean Dollar',
     symbol: '$'
   },
   {
     country: 'Guatemala',
-    iso: 'GTQ',
+    isoCode: 'GTQ',
     name: 'Guatemalan Quetzal',
     symbol: 'Q'
   },
   {
     country: 'Guinea',
-    iso: 'GNF',
+    isoCode: 'GNF',
     name: 'Guinean Franc',
     symbol: 'FG'
   },
   {
     country: 'Guinea-Bissau',
-    iso: 'XOF',
+    isoCode: 'XOF',
     name: 'West African Cfa Franc',
     symbol: 'CFA'
   },
   {
     country: 'Guyana',
-    iso: 'GYD',
+    isoCode: 'GYD',
     name: 'Guyanese Dollar',
     symbol: '$'
   },
   {
     country: 'Haiti',
-    iso: 'HTG',
+    isoCode: 'HTG',
     name: 'Haitian Gourde',
     symbol: 'G'
   },
   {
     country: 'Honduras',
-    iso: 'HNL',
+    isoCode: 'HNL',
     name: 'Honduran Lempira',
     symbol: 'L'
   },
   {
     country: 'Hungary',
-    iso: 'HUF',
+    isoCode: 'HUF',
     name: 'Hungarian Forint',
     symbol: 'Ft'
   },
   {
     country: 'Iceland',
-    iso: 'ISK',
+    isoCode: 'ISK',
     name: 'Icelandic Króna',
     symbol: 'kr'
   },
   {
     country: 'Indonesia',
-    iso: 'IDR',
+    isoCode: 'IDR',
     name: 'Indonesian Rupiah',
     symbol: 'Rp'
   },
   {
     country: 'Iran',
-    iso: 'IRR',
+    isoCode: 'IRR',
     name: 'Iranian Rial',
     symbol: '﷼'
   },
   {
     country: 'Iraq',
-    iso: 'IQD',
+    isoCode: 'IQD',
     name: 'Iraqi Dinar',
     symbol: 'ع.د'
   },
   {
     country: 'Ireland',
-    iso: 'EUR',
+    isoCode: 'EUR',
     name: 'Euro',
     symbol: '€'
   },
   {
     country: 'Israel',
-    iso: 'ILS',
+    isoCode: 'ILS',
     name: 'Israeli New Shekel',
     symbol: '₪'
   },
   {
     country: 'Italy',
-    iso: 'EUR',
+    isoCode: 'EUR',
     name: 'Euro',
     symbol: '€'
   },
   {
     country: 'Ivory Coast',
-    iso: 'XOF',
+    isoCode: 'XOF',
     name: 'West African Cfa Franc',
     symbol: 'CFA'
   },
   {
     country: 'Jamaica',
-    iso: 'JMD',
+    isoCode: 'JMD',
     name: 'Jamaican Dollar',
     symbol: 'J$'
   },
   {
     country: 'Jordan',
-    iso: 'JOD',
+    isoCode: 'JOD',
     name: 'Jordanian Dinar',
     symbol: 'JD'
   },
   {
     country: 'Kazakhstan',
-    iso: 'KZT',
+    isoCode: 'KZT',
     name: 'Kazakhstani Tenge',
     symbol: 'лв'
   },
   {
     country: 'Kenya',
-    iso: 'KES',
+    isoCode: 'KES',
     name: 'Kenyan Shilling',
     symbol: 'KSh'
   },
   {
     country: 'Kiribati',
-    iso: 'AUD',
+    isoCode: 'AUD',
     name: 'Australian Dollar',
     symbol: '$'
   },
   {
     country: 'Korea, North',
-    iso: 'KPW',
+    isoCode: 'KPW',
     name: 'North Korean Won',
     symbol: '₩'
   },
   {
     country: 'Kosovo',
-    iso: 'EUR',
+    isoCode: 'EUR',
     name: 'Euro',
     symbol: '€'
   },
   {
     country: 'Kuwait',
-    iso: 'KWD',
+    isoCode: 'KWD',
     name: 'Kuwaiti Dinar',
     symbol: 'KD'
   },
   {
     country: 'Kyrgyzstan',
-    iso: 'KGS',
+    isoCode: 'KGS',
     name: 'Kyrgyzstani Som',
     symbol: 'лв'
   },
   {
     country: 'Laos',
-    iso: 'LAK',
+    isoCode: 'LAK',
     name: 'Lao Kip',
     symbol: '₭'
   },
   {
     country: 'Latvia',
-    iso: 'EUR',
+    isoCode: 'EUR',
     name: 'Euro',
     symbol: '€'
   },
   {
     country: 'Lebanon',
-    iso: 'LBP',
+    isoCode: 'LBP',
     name: 'Lebanese Pound',
     symbol: '£'
   },
   {
     country: 'Lesotho',
-    iso: 'LSL',
+    isoCode: 'LSL',
     name: 'Lesotho Loti',
     symbol: 'M'
   },
   {
     country: 'Liberia',
-    iso: 'LRD',
+    isoCode: 'LRD',
     name: 'Liberian Dollar',
     symbol: '$'
   },
   {
     country: 'Libya',
-    iso: 'LYD',
+    isoCode: 'LYD',
     name: 'Libyan Dinar',
     symbol: 'LD'
   },
   {
     country: 'Liechtenstein',
-    iso: 'CHF',
+    isoCode: 'CHF',
     name: 'Swiss Franc',
     symbol: 'CHF'
   },
   {
     country: 'Lithuania',
-    iso: 'EUR',
+    isoCode: 'EUR',
     name: 'Euro',
     symbol: '€'
   },
   {
     country: 'Luxembourg',
-    iso: 'EUR',
+    isoCode: 'EUR',
     name: 'Euro',
     symbol: '€'
   },
   {
     country: 'Madagascar',
-    iso: 'MGA',
+    isoCode: 'MGA',
     name: 'Malagasy Ariary',
     symbol: 'Ar'
   },
   {
     country: 'Malawi',
-    iso: 'MWK',
+    isoCode: 'MWK',
     name: 'Malawian Kwacha',
     symbol: 'MK'
   },
   {
     country: 'Malaysia',
-    iso: 'MYR',
+    isoCode: 'MYR',
     name: 'Malaysian Ringgit',
     symbol: 'RM'
   },
   {
     country: 'Maldives',
-    iso: 'MVR',
+    isoCode: 'MVR',
     name: 'Maldivian Rufiyaa',
     symbol: 'Rf'
   },
   {
     country: 'Mali',
-    iso: 'XOF',
+    isoCode: 'XOF',
     name: 'West African Cfa Franc',
     symbol: 'CFA'
   },
   {
     country: 'Malta',
-    iso: 'EUR',
+    isoCode: 'EUR',
     name: 'Euro',
     symbol: '€'
   },
   {
     country: 'Marshall Islands',
-    iso: 'USD',
+    isoCode: 'USD',
     name: 'United States Dollar',
     symbol: '$'
   },
   {
     country: 'Mauritania',
-    iso: 'MRU',
+    isoCode: 'MRU',
     name: 'Mauritanian Ouguiya',
     symbol: 'UM'
   },
   {
     country: 'Mauritius',
-    iso: 'MUR',
+    isoCode: 'MUR',
     name: 'Mauritian Rupee',
     symbol: '₨'
   },
   {
     country: 'Mexico',
-    iso: 'MXN',
+    isoCode: 'MXN',
     name: 'Mexican Peso',
     symbol: '$'
   },
   {
     country: 'Micronesia',
-    iso: 'USD',
+    isoCode: 'USD',
     name: 'United States Dollar',
     symbol: '$'
   },
   {
     country: 'Moldova',
-    iso: 'MDL',
+    isoCode: 'MDL',
     name: 'Moldovan Leu',
     symbol: 'lei'
   },
   {
     country: 'Monaco',
-    iso: 'EUR',
+    isoCode: 'EUR',
     name: 'Euro',
     symbol: '€'
   },
   {
     country: 'Montenegro',
-    iso: 'EUR',
+    isoCode: 'EUR',
     name: 'Euro',
     symbol: '€'
   },
   {
     country: 'Morocco',
-    iso: 'MAD',
+    isoCode: 'MAD',
     name: 'Moroccan Dirham',
     symbol: 'MAD'
   },
   {
     country: 'Mozambique',
-    iso: 'MZN',
+    isoCode: 'MZN',
     name: 'Mozambican Metical',
     symbol: 'MT'
   },
   {
     country: 'Myanmar',
-    iso: 'MMK',
+    isoCode: 'MMK',
     name: 'Burmese Kyat',
     symbol: 'K'
   },
   {
     country: 'Namibia',
-    iso: 'NAD',
+    isoCode: 'NAD',
     name: 'Namibian Dollar',
     symbol: '$'
   },
   {
     country: 'Nauru',
-    iso: 'AUD',
+    isoCode: 'AUD',
     name: 'Australian Dollar',
     symbol: '$'
   },
   {
     country: 'Nepal',
-    iso: 'NPR',
+    isoCode: 'NPR',
     name: 'Nepalese Rupee',
     symbol: '₨'
   },
   {
     country: 'Netherlands',
-    iso: 'EUR',
+    isoCode: 'EUR',
     name: 'Euro',
     symbol: '€'
   },
   {
     country: 'New Zealand',
-    iso: 'NZD',
+    isoCode: 'NZD',
     name: 'New Zealand Dollar',
     symbol: '$'
   },
   {
     country: 'Nicaragua',
-    iso: 'NIO',
+    isoCode: 'NIO',
     name: 'Nicaraguan Córdoba',
     symbol: 'C$'
   },
   {
     country: 'Niger',
-    iso: 'XOF',
+    isoCode: 'XOF',
     name: 'West African Cfa Franc',
     symbol: 'CFA'
   },
   {
     country: 'Nigeria',
-    iso: 'NGN',
+    isoCode: 'NGN',
     name: 'Nigerian Naira',
     symbol: '₦'
   },
   {
     country: 'North Macedonia',
-    iso: 'MKD',
+    isoCode: 'MKD',
     name: 'Macedonian Denar',
     symbol: 'ден'
   },
   {
     country: 'Norway',
-    iso: 'NOK',
+    isoCode: 'NOK',
     name: 'Norwegian Krone',
     symbol: 'kr'
   },
   {
     country: 'Oman',
-    iso: 'OMR',
+    isoCode: 'OMR',
     name: 'Omani Rial',
     symbol: '﷼'
   },
   {
     country: 'Pakistan',
-    iso: 'PKR',
+    isoCode: 'PKR',
     name: 'Pakistani Rupee',
     symbol: '₨'
   },
   {
     country: 'Palau',
-    iso: 'USD',
+    isoCode: 'USD',
     name: 'United States Dollar',
     symbol: '$'
   },
   {
     country: 'Palestine',
-    iso: 'ILS',
+    isoCode: 'ILS',
     name: 'Israeli New Shekel',
     symbol: '₪'
   },
   {
     country: 'Panama',
-    iso: 'PAB',
+    isoCode: 'PAB',
     name: 'Panamanian Balboa',
     symbol: 'B/.'
   },
   {
     country: 'Papua New Guinea',
-    iso: 'PGK',
+    isoCode: 'PGK',
     name: 'Papua New Guinean Kina',
     symbol: 'K'
   },
   {
     country: 'Paraguay',
-    iso: 'PYG',
+    isoCode: 'PYG',
     name: 'Paraguayan Guaraní',
     symbol: 'Gs'
   },
   {
     country: 'Peru',
-    iso: 'PEN',
+    isoCode: 'PEN',
     name: 'Peruvian Sol',
     symbol: 'S/.'
   },
   {
     country: 'Philippines',
-    iso: 'PHP',
+    isoCode: 'PHP',
     name: 'Philippine Peso',
     symbol: '₱'
   },
   {
     country: 'Poland',
-    iso: 'PLN',
+    isoCode: 'PLN',
     name: 'Polish Zloty',
     symbol: 'zł'
   },
   {
     country: 'Portugal',
-    iso: 'EUR',
+    isoCode: 'EUR',
     name: 'Euro',
     symbol: '€'
   },
   {
     country: 'Qatar',
-    iso: 'QAR',
+    isoCode: 'QAR',
     name: 'Qatari Riyal',
     symbol: '﷼'
   },
   {
     country: 'Republic of the Congo',
-    iso: 'XAF',
+    isoCode: 'XAF',
     name: 'Central African Cfa Franc',
     symbol: 'FCFA'
   },
   {
     country: 'Romania',
-    iso: 'RON',
+    isoCode: 'RON',
     name: 'Romanian Leu',
     symbol: 'lei'
   },
   {
     country: 'Rwanda',
-    iso: 'RWF',
+    isoCode: 'RWF',
     name: 'Rwandan Franc',
     symbol: 'R₣'
   },
   {
     country: 'Saint Kitts and Nevis',
-    iso: 'XCD',
+    isoCode: 'XCD',
     name: 'East Caribbean Dollar',
     symbol: '$'
   },
   {
     country: 'Saint Lucia',
-    iso: 'XCD',
+    isoCode: 'XCD',
     name: 'East Caribbean Dollar',
     symbol: '$'
   },
   {
     country: 'Saint Vincent and the Grenadines',
-    iso: 'XCD',
+    isoCode: 'XCD',
     name: 'East Caribbean Dollar',
     symbol: '$'
   },
   {
     country: 'Samoa',
-    iso: 'WST',
+    isoCode: 'WST',
     name: 'Samoan Tala',
     symbol: 'WS$'
   },
   {
     country: 'San Marino',
-    iso: 'EUR',
+    isoCode: 'EUR',
     name: 'Euro',
     symbol: '€'
   },
   {
     country: 'Saudi Arabia',
-    iso: 'SAR',
+    isoCode: 'SAR',
     name: 'Saudi Riyal',
     symbol: '﷼'
   },
   {
     country: 'Senegal',
-    iso: 'XOF',
+    isoCode: 'XOF',
     name: 'West African Cfa Franc',
     symbol: 'CFA'
   },
   {
     country: 'Serbia',
-    iso: 'RSD',
+    isoCode: 'RSD',
     name: 'Serbian Dinar',
     symbol: 'Дин.'
   },
   {
     country: 'Seychelles',
-    iso: 'SCR',
+    isoCode: 'SCR',
     name: 'Seychellois Rupee',
     symbol: '₨'
   },
   {
     country: 'Sierra Leone',
-    iso: 'SLL',
+    isoCode: 'SLL',
     name: 'Sierra Leonean Leone',
     symbol: 'Le'
   },
   {
     country: 'Slovakia',
-    iso: 'EUR',
+    isoCode: 'EUR',
     name: 'Euro',
     symbol: '€'
   },
   {
     country: 'Slovenia',
-    iso: 'EUR',
+    isoCode: 'EUR',
     name: 'Euro',
     symbol: '€'
   },
   {
     country: 'Solomon Islands',
-    iso: 'SBD',
+    isoCode: 'SBD',
     name: 'Solomon Islands Dollar',
     symbol: '$'
   },
   {
     country: 'Somalia',
-    iso: 'SOS',
+    isoCode: 'SOS',
     name: 'Somali Shilling',
     symbol: 'S'
   },
   {
     country: 'South Africa',
-    iso: 'ZAR',
+    isoCode: 'ZAR',
     name: 'South African Rand',
     symbol: 'R'
   },
   {
     country: 'Spain',
-    iso: 'EUR',
+    isoCode: 'EUR',
     name: 'Euro',
     symbol: '€'
   },
   {
     country: 'Sri Lanka',
-    iso: 'LKR',
+    isoCode: 'LKR',
     name: 'Sri Lankan Rupee',
     symbol: '₨'
   },
   {
     country: 'Sudan',
-    iso: 'SDG',
+    isoCode: 'SDG',
     name: 'Sudanese Pound',
     symbol: 'ج.س.'
   },
   {
     country: 'Suriname',
-    iso: 'SRD',
+    isoCode: 'SRD',
     name: 'Surinamese Dollar',
     symbol: '$'
   },
   {
     country: 'Taiwan',
-    iso: 'TWD',
+    isoCode: 'TWD',
     name: 'New Taiwan Dollar',
     symbol: 'NT$'
   },
   {
     country: 'Tajikistan',
-    iso: 'TJS',
+    isoCode: 'TJS',
     name: 'Tajikistani Somoni',
     symbol: 'SM'
   },
   {
     country: 'Tanzania',
-    iso: 'TZS',
+    isoCode: 'TZS',
     name: 'Tanzanian Shilling',
     symbol: 'TSh'
   },
   {
     country: 'Thailand',
-    iso: 'THB',
+    isoCode: 'THB',
     name: 'Thai Baht',
     symbol: '฿'
   },
   {
     country: 'Togo',
-    iso: 'XOF',
+    isoCode: 'XOF',
     name: 'West African Cfa Franc',
     symbol: 'CFA'
   },
   {
     country: 'Tonga',
-    iso: 'TOP',
+    isoCode: 'TOP',
     name: "Tongan Pa'anga",
     symbol: 'T$'
   },
   {
     country: 'Trinidad and Tobago',
-    iso: 'TTD',
+    isoCode: 'TTD',
     name: 'Trinidad And Tobago Dollar',
     symbol: 'TT$'
   },
   {
     country: 'Tunisia',
-    iso: 'TND',
+    isoCode: 'TND',
     name: 'Tunisian Dinar',
     symbol: 'د.ت'
   },
   {
     country: 'Turkey',
-    iso: 'TRY',
+    isoCode: 'TRY',
     name: 'Turkish Lira',
     symbol: '₺'
   },
   {
     country: 'Turkmenistan',
-    iso: 'TMT',
+    isoCode: 'TMT',
     name: 'Turkmenistan Manat',
     symbol: 'T'
   },
   {
     country: 'Tuvalu',
-    iso: 'AUD',
+    isoCode: 'AUD',
     name: 'Australian Dollar',
     symbol: '$'
   },
   {
     country: 'Uganda',
-    iso: 'UGX',
+    isoCode: 'UGX',
     name: 'Ugandan Shilling',
     symbol: 'USh'
   },
   {
     country: 'Ukraine',
-    iso: 'UAH',
+    isoCode: 'UAH',
     name: 'Ukrainian Hryvnia',
     symbol: '₴'
   },
   {
     country: 'United Arab Emirates',
-    iso: 'AED',
+    isoCode: 'AED',
     name: 'United Arab Emirates Dirham',
     symbol: 'د.إ'
   },
   {
     country: 'United States',
-    iso: 'USD',
+    isoCode: 'USD',
     name: 'United States Dollar',
     symbol: '$'
   },
   {
     country: 'Uruguay',
-    iso: 'UYU',
+    isoCode: 'UYU',
     name: 'Uruguayan Peso',
     symbol: '$U'
   },
   {
     country: 'Uzbekistan',
-    iso: 'UZS',
+    isoCode: 'UZS',
     name: 'Uzbekistani Som',
     symbol: 'лв'
   },
   {
     country: 'Vanuatu',
-    iso: 'VUV',
+    isoCode: 'VUV',
     name: 'Vanuatu Vatu',
     symbol: 'VT'
   },
   {
     country: 'Vatican City',
-    iso: 'EUR',
+    isoCode: 'EUR',
     name: 'Euro',
     symbol: '€'
   },
   {
     country: 'Venezuela',
-    iso: 'VEF',
+    isoCode: 'VEF',
     name: 'Venezuelan Bolívar',
     symbol: 'Bs'
   },
   {
     country: 'Yemen',
-    iso: 'YER',
+    isoCode: 'YER',
     name: 'Yemeni Rial',
     symbol: '﷼'
   },
   {
     country: 'Zambia',
-    iso: 'ZMW',
+    isoCode: 'ZMW',
     name: 'Zambian Kwacha',
     symbol: 'ZK'
   },
   {
     country: 'Zimbabwe',
-    iso: 'USD',
+    isoCode: 'USD',
     name: 'United States Dollar',
     symbol: '$'
   }
