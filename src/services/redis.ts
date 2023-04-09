@@ -1,7 +1,6 @@
 import { RedisClientOptions, createClient } from 'redis'
 import config from '../configs'
 import { RedisClientType } from '../configs/types'
-import currencyList from '../utils/currencyList';
 
 const { REDIS_HOST, REDIS_PORT, REDIS_PASSWORD } = config.env
 const url = `redis://${
@@ -25,7 +24,6 @@ async function getCache(): Promise<RedisClientType> {
       console.log('Redis ready!')
     })
     await redisClient.connect()
-    await redisClient.set('currencyList', JSON.stringify( currencyList ))
   }
   return redisClient
 }

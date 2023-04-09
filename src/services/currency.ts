@@ -4,6 +4,8 @@ import {
   ISymbolsResponse,
   roundToNumber
 } from '../configs/types'
+import currencyList from '../utils/currencyList'
+
 const { getCache } = require('./redis')
 
 const round: roundToNumber = (num: number, decimals: number) => {
@@ -94,15 +96,10 @@ const getCurrencyRatesByFrom = async (from: string, to: string) => {
 
 const getSymbols = async (): Promise<ISymbolsResponse> => {
   try {
-    const redisClient = await getCache()
-    const symbols = await redisClient.get('currencyList')
-    if (symbols) {
-      return {
-        success: true,
-        symbols: JSON.parse(symbols)
-      }
+    return {
+      success: true,
+      symbols: currencyList
     }
-    return { success: true, symbols: [] }
   } catch (error) {
     console.log('Error in getSymbols:', error)
     return { success: false, symbols: [] }

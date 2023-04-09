@@ -100,12 +100,10 @@ export interface IQuery {
 }
 
 export interface ISymbols {
-  symbols: {
-    country: string,
-    iso: string,
-    name: string,
-    symbol: string
-  }[]
+  country: string
+  isoCode: string
+  name: string
+  symbol: string
 }
 
 export interface ISymbolsResponse {
