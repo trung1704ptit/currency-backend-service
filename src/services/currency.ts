@@ -1,4 +1,4 @@
-import { ICurrency, IQuery, roundToNumber } from "../configs/types"
+import { ICurrency, IQuery, ISymbol, roundToNumber } from "../configs/types"
 const { getCache } = require('./redis')
 
 const round: roundToNumber = (num: number, decimals: number) => {
@@ -87,6 +87,17 @@ const getCurrencyRatesByFrom = async (from: string, to: string) => {
   }
 }
 
+const getSymbols = async (): Promise<ISymbol[]> => {
+  try {
+    const redisClient = await getCache();
+    const currencyList = redisClient.get('currencyList') || [];
+    return currencyList;
+  } catch (error) {
+    console.log('Error in getSymbols:', error);
+    return [];
+  }
+}
+
 const convertCurrency = async (query: IQuery) => {
   try {
     const { from, to, amount } = query;
@@ -159,5 +170,6 @@ module.exports = {
   convertCurrency,
   getCurrencyByPairName,
   updateCurrencyByBatch,
-  getCurrencyRatesByFrom
+  getCurrencyRatesByFrom,
+  getSymbols
 }

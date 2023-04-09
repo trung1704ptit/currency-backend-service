@@ -98,3 +98,10 @@ export interface IQuery {
   to: string
   amount: number
 }
+
+export interface ISymbol {
+  country: string,
+  iso: string,
+  name: string,
+  symbol: string
+}

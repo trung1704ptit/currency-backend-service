@@ -49,4 +49,6 @@ import Controller from '../controllers/currency'
 router.route('/rates').get(Controller.getCurrencyRates)
 router.route('/converts').get(Controller.convertCurrency)
 router.route('').post(Controller.updateCurrency)
+router.route('symbols').get(Controller.getSymbols)
+
 export default router
