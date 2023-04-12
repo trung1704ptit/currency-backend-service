@@ -1,7 +1,7 @@
 import {
   ICurrency,
   IQuery,
-  ISymbolsResponse,
+  // ISymbolsResponse,
   roundToNumber
 } from '../configs/types'
 import currencyList from '../utils/currencyList'
@@ -94,7 +94,7 @@ const getCurrencyRatesByFrom = async (from: string, to: string) => {
   }
 }
 
-const getSymbols = async (): Promise<ISymbolsResponse> => {
+const getCurrencySymbols = () => {
   try {
     return {
       success: true,
@@ -179,5 +179,5 @@ module.exports = {
   getCurrencyByPairName,
   updateCurrencyByBatch,
   getCurrencyRatesByFrom,
-  getSymbols
+  getCurrencySymbols
 }

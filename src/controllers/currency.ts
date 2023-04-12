@@ -54,8 +54,8 @@ const convertCurrency = catchAsync(async (req: Request, res: Response) => {
   res.send(currencyData)
 })
 
-const getSymbols = catchAsync(async (_: Request, res: Response) => {
-  const currencyList = await currencyService.getSymbols();
+const getCurrencySymbols = catchAsync(async (_: Request, res: Response) => {
+  const currencyList = await currencyService.getCurrencySymbols();
   res.send(currencyList);
 })
 
@@ -64,7 +64,7 @@ const exportResult = {
   handleSocketConnect,
   getCurrencyRates,
   convertCurrency,
-  getSymbols
+  getCurrencySymbols
 }
 
 export default exportResult
