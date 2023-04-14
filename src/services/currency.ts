@@ -23,14 +23,13 @@ function groupByCategory(currencies: ICurrency[]) {
 }
 
 function mergeList(list1: ICurrency[], list2: ICurrency[]) {
-  list1.forEach((item, index) => {
+  list1.forEach((item) => {
     const finder = list2.find((val) => val.to === item.to)
     if (finder) {
-      list1[index] = finder
       list2 = list2.filter((val) => val.to !== finder.to)
     }
   })
-  return list1
+  return [...list1, ...list2]
 }
 
 /**
