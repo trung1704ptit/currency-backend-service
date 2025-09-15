@@ -1,5 +1,5 @@
-# Micro-service Boilerplate
-This is a micro-service boilerplate written with Typescript and implemented using [Node.js] (Express), [MongoDB] (Mongoose), [Redis], Jest, Socket.io and OpenAPI (Swagger). You can use it to initiate your own server-side application.
+# Micro-service
+This is a micro-service written with Typescript and implemented using [Node.js] (Express), [MongoDB] (Mongoose), [Redis], Jest, Socket.io and OpenAPI (Swagger)
 
 
 ## [Name of the application] API
